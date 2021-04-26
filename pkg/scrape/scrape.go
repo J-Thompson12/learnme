@@ -32,7 +32,7 @@ func Scrape(website string, topic string) []Article {
 		articles: &[]Article{},
 	}
 
-	scraper.wg.Add(2)
+	scraper.wg.Add(3)
 	go scraper.getGoBlogData(topic)
 	go scraper.getWeaveWorksData(topic)
 	go scraper.getMediumData(topic)

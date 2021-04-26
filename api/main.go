@@ -42,8 +42,6 @@ func slashCommandHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// go processingResponse(w, processing)
-
 	switch s.Command {
 	case "/learnme":
 		w.Write([]byte("processing...\n"))
@@ -66,7 +64,7 @@ func handleArticlesResponse(responseURL, topic string) {
 		return
 	}
 	defer resp.Body.Close()
-	//Read the response body
+
 	_, err = ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatalln(err)
